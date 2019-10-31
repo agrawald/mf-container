@@ -11,18 +11,30 @@ export const navbar = (location: Location) => true;
 
 registerApplication(
   'navbar',
-  () => SystemJS.import('//' + process.env.REACT_APP_NAVBAR_URL + '/static/js/bundle.js'),
-  navbar
+  () =>
+    SystemJS.import(
+      '//' + process.env.REACT_APP_NAVBAR_URL + '/static/js/bundle.js'
+    ),
+  navbar,
+  { scope: process.env.REACT_APP_SCOPE }
 );
 registerApplication(
   'tasks',
-  () => SystemJS.import('//' + process.env.REACT_APP_TASKS_URL + '/static/js/bundle.js'),
-  tasks
+  () =>
+    SystemJS.import(
+      '//' + process.env.REACT_APP_TASKS_URL + '/static/js/bundle.js'
+    ),
+  tasks,
+  { scope: process.env.REACT_APP_SCOPE }
 );
 registerApplication(
   'notifications',
-  () => SystemJS.import('//' + process.env.REACT_APP_NOTIFICATION_URL + '/static/js/bundle.js'),
-  notifications
+  () =>
+    SystemJS.import(
+      '//' + process.env.REACT_APP_NOTIFICATION_URL + '/static/js/bundle.js'
+    ),
+  notifications,
+  { scope: process.env.REACT_APP_SCOPE }
 );
 start();
 serviceWorker.unregister();
